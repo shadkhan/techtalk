@@ -1,0 +1,50 @@
+    <section class="" data-id="c716f5f4c31c93d643c91f67373b4ce5">
+<h2>$Resource</h2>
+<div style="text-align: left; ">
+    <ul>
+        <li>lets you interact with RESTful server-side data sources<br>
+        </li>
+        <li>helps to manage the data from the server without directly creating Ajax requests.<br>
+        </li>
+        <li>Configuring the $resource<br>
+        </li>
+        <ul>
+            <li>Include angular-resource.js file<br>
+            </li>
+            <li>Include the module<br>
+            </li>
+            <li>
+<pre><code> angular.module('app,['ngResource']);</code></pre>
+        </li>
+         <li>configure the resource<br>
+            </li>
+            <li>
+<pre><code>  $resource(url, [paramDefaults], [actions], options); </code></pre>
+        </li>
+    </ul>
+</ul>
+</div>
+</section>
+<section class="" data-id="d1512a4674f0e0d4db9acc6942ed6c2e">
+    <h2>Example</h2>
+    <div>
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/shaffiullahkhan/images/474430/pasted-from-clipboard.png">
+        <br>
+    </div>
+</section>
+<section class="" data-id="b6a1614c3528ed1b387c1262f707eae3">
+    <h2>Resource constructor</h2>
+    <div style="text-align: left; ">
+        <ul>
+            <li>the default set of resource actions optionally extended with custom actions. </li>
+            <li>The default actions are</li>
+            <li>
+<pre><code>   { 'get':    {method:'GET'},
+    'save':   {method:'POST'},
+    'query':  {method:'GET', isArray:true},
+    'remove': {method:'DELETE'},
+    'delete': {method:'DELETE'} };</code>            </pre>
+        </li>
+    </ul>
+</div>
+</section>

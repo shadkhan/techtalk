@@ -1,0 +1,67 @@
+ <section>
+   <h2>Directives</h2>
+   <h4>The simplest way to think about a directive is that it is simply a function that we run on a
+particular DOM element. The directive function can provide extra functionality on the element.</h4>
+  <h4>Built in Directives </h4>
+  <ul>
+    <li> ng-href</li>
+    <li> ng-src</li>
+    <li> ng-disabled</li>
+    <li> ng-checked</li>
+    <li> ng-readonly</li>
+    <li> ng-selected</li>
+    <li> ng-class</li>
+    <li> ng-style </li>
+  </ul>  
+</section>
+<section>
+  <h2> Custom Directives</h2>
+  <h4>A directive is defined using the .directive() method, one of the many methods available on
+our application’s Angular module.</h4>
+<pre><code><my-directive></my-directive></code></pre>
+<h4>The myDirective directive definition looks like:</h4>
+<pre><code>
+angular.module('myApp', [])
+directive('myDirective', function() {
+return {
+restrict: 'E',
+template: '<a href="http://google.com">
+Click me to go to Google</a>'
+}
+});
+</code></pre>
+</section>
+<section>
+  <h4>Invoking the directive</h4>
+  <ul><li> element (E)</li> <li>an attribute (A)</li> <li>a class (C)</li>  <li>a comment (M)</li></ul>
+  <br>
+  <br>
+  <h4> For example </h4>
+  <pre><code>
+  restrict: 'EAC'
+  </pre></code>
+</section>
+ <section>
+ <h2>Demo</h2>
+ <h2>Custom Directive</h2>
+<live-example>
+  <script type="text/template" data-title="directive">
+  <code>
+    function Controller($scope) {
+    $scope.customer = {
+      name: 'Naomi',
+      address: '1600 Amphitheatre'
+    };
+  };
+  angular.module('demo').directive('myCustomer', function() {
+    return {
+      template: 'Name: {{customer.name}} Address: {{customer.address}}'
+    };
+  });
+  </code>
+  <div ng-controller="Controller">
+      <div my-customer></div>
+  </div>
+</script>
+</live-example>
+</section>            

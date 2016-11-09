@@ -1,0 +1,85 @@
+  <section class="" data-id="ffbc6a1849e8f3167480fad6c9d7ae7d">
+        <h2 style="font-style: normal; font-variant: normal;">ANGULAR WITH JQUERY</h2>
+<div style="text-align: left; ">
+        <ul>
+<li>
+        <span>Angular uses jQuery if it's presentwhen the application is being bootstrapped.</span>
+        </li>
+<li>
+<span>If it is not present , Angular falls back to its own implementation called &nbsp;jQLite.</span>
+        <br>
+</li>
+<li>
+        <span>jQLite is a tiny subset of jQuery that allows Angular to manipulate the DOM in a cross-browser compatible way.with the goal of having a very small footprint.</span>
+    </li>
+</ul>
+</div>
+<h2>
+<div style="font-size: 36px; font-style: normal; font-variant: normal; text-transform: none;">
+<br>
+</div>
+</h2>
+</section>
+<section class="" data-id="625f9f9bad8c7b31a5f551773e0828bf">
+    <h2>Using JQUERY PLUGIN</h2>
+<div style="text-align: left; ">
+<span>For using a jQuery plugin, do not put the code in the controller. Instead create a directive anut the code that you would normally have inside the link function of the directive..</span>
+    <span style="text-align: center;">So what we need to do is</span>
+</div>
+<div style="text-align: left; ">
+    <span>
+        <div>
+            <ul>
+<li>
+<span>include jQuery in your HTML</span>
+            <br>
+</li>
+<li>
+            <span>call initialization function in directive link function</span>
+        </li>
+</ul>
+    </div>
+</span>
+</div>
+<div style="text-align: left; ">
+<br>
+</div>
+<div style="text-align: left; ">
+<span>
+    <br>
+</span>
+</div>
+<div style="text-align: left; ">
+<br>
+</div>
+<div style="text-align: left; ">
+<span>
+    <br>
+</span>
+</div>
+<br>
+</section>
+<section class="" data-id="f153e56f4727d8d2346eb84599ca43ed">
+    <h2>Example</h2>
+<div style="text-align: left; ">Creating a directive with Toolbar.js jQuery plugin</div>
+<div style="text-align: left; ">
+<pre><code> &lt;div id="format-toolbar1" class="settings-button" toolbar-tip="{content: '#format-toolbar-options', position: 'top'}"&gt;
+    &lt;img src="http://paulkinzett.github.com/toolbar/img/icon-cog-small.png"&gt;
+&lt;/div&gt;</code></pre>
+</div>
+<div style="text-align: left; ">
+<pre><code> var App = angular.module('Toolbar', []); 
+App.directive('toolbarTip', function() {
+    return {
+        restrict: 'A',
+        // responsible for registering DOM listeners as well as updating the DOM
+        link: function(scope, element, attrs) {
+            $(element).toolbar(scope.$eval(attrs.toolbarTip)); 
+//<span style="font-family: monospace; font-size: 20px; font-style: normal; font-variant: normal;">;Rather than using $(element), you can make use of angular.element(element) when using AngularJS with jQuery</span>
+        }
+    };
+});
+</code></pre>
+</div>
+<br>
+</section>

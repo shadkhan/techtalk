@@ -1,0 +1,28 @@
+  <h2>MVC in Angular</h2>
+<div style="text-align: left; ">
+<ul>
+    <li>Model&nbsp;</li>
+</ul>
+<div>
+<pre><code> {  "name": "Misko"  }</code></pre>
+</div>
+<ul>
+<li>View</li>
+</ul>
+<div>
+<pre><code> &lt;p ng-controller='PersonController as person'&gt;
+    Hi, {{person.model.name} }
+&lt;/p&gt;</code></pre>
+</div>
+<ul>
+<li>Controller</li>
+</ul>
+<div>
+<pre><code> myApp.controller('PersonController', function () {
+    this.model = {  name: 'Misko'  };
+});</code></pre>
+</div>
+<div>
+<br>
+</div>
+</div>

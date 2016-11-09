@@ -1,0 +1,64 @@
+ <h2>Why is that so powerful?</h2>
+            <live-example>
+              <script type="text/template" data-title="Normal">
+              <form name="form">
+                <p>
+                <input type="text" ng-model="name"/>
+                </p>
+                <p>
+                {{name}}
+                </p>
+              </form>
+              </script>
+              <script type="text/template" data-title="Reverse">
+              <code>
+              function Foo($scope){
+                $scope.rev = function(s) {
+                  if (s) {
+                  return s.split('').reverse().join('');
+                  }
+                }
+              }
+              </code>
+              <form name="form" ng-controller="Foo">
+                <p>
+                <input type="text" ng-model="name"/>
+                </p>
+                <p>
+                {{rev(name)}}
+                </p>
+              </form>
+              </script>
+              <script type="text/template" data-title="TODO">
+              <code>
+              function Foo($scope){
+              $scope.tasks = [];
+              $scope.addTask = function() {
+              $scope.tasks.push($scope.newTask);
+              $scope.newTask = null;
+              };
+              $scope.removeTask = function (index) {
+              $scope.tasks.splice(index, 1);
+              };
+              }
+              </code>
+              <form name="form" ng-controller="Foo">
+                <h2>{{tasks.length}} Tasks</h2>
+                <p>
+                <input type="text" ng-model="newTask"/>
+                <button ng-click="addTask()">Add</button>
+                </p>
+                <ul>
+                  <li ng-repeat="(index, task) in tasks">
+                    {{task}} <button ng-click="removeTask(index)">X</button>
+                  </li>
+                </ul>
+              </form>
+              </script>
+              <script type="text/template" data-title="Red Square">
+              X: <input type="text" ng-model="x">px
+              <br>
+              Y: <input type="text" ng-model="y">px
+              <div style="background-color: red; width: 20px; height: 20px; position: absolute; left: {{x}}px; top: {{y}}px"></div>
+              </script>
+            </live-example>

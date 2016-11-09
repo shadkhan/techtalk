@@ -1,0 +1,99 @@
+<section>
+	<h2>Routing</h2>
+	<div>
+		<ul>
+			<li>Deep linking<br>
+			</li>
+			<li>Support HTML5 pushstate<br>
+			</li>
+			<li>URL rewriting<br>
+			</li>
+		</ul>
+		<div style="text-align: left;">
+			<br>
+		</div>
+</section>
+<section>
+		<h2>To start with ngRoute </h2>
+		<br>
+		<h4>Include /angular-route.js in your index.html</h4>
+		<br>
+		<h4>To use ngRoute, angular.module('myApp', ['ngRoute']);</h4>
+</section>
+<section>
+		<h2>ngView</h2>
+<pre>
+	<code>
+		<header>
+			<h1>Header</h1>
+		</header>
+		<div class="content">
+			<div ng-view></div>
+		</div>
+		<footer>
+			<h5>Footer</h5>
+		</footer>
+	</code>
+</pre>	
+<h4><span style="text-align: center;">The ng-view directive is a special directive that’s included with the ngRoute module. Its specific
+responsibility is to stand as a placeholder for $route view content.</span></h4>	
+</section>
+<section>
+	<h3>ngView directive </h3>
+	<h4>	Any time the $routeChangeSuccess event is fired, the view will update</h4>
+
+ <h4>If there is a template associated with the current route, then</h4>
+
+<ul><li>Create a new scope</li>
+<li>Remove the last view, which cleans up the last scope</li>
+<li> Link the new scope and the new template</li>
+<li>Link the controller to the scope, if specified in the routes</li>
+<li>Emits the $viewContentLoaded event</li>
+<li>Run the onload attribute function, if provided</li>
+</section>
+<section>
+				<h3>Routes Configurations</h3>
+				<br>
+				<h2>otherwise</h2>
+				<br>
+				<h2>when</h2>
+</section>	
+<section>
+	<h2>Sample Code</h2>
+<pre>
+	<code>
+angular.module('myApp', []).
+config(['$routeProvider', function($routeProvider) {
+	$routeProvider
+	.when('/', {
+	templateUrl: 'views/home.html',
+	controller: 'HomeController'
+	})
+	.when('/login', {
+	templateUrl: 'views/login.html',
+	controller: 'LoginController'
+	})
+	.otherwise({
+	redirectTo: '/'
+	});
+}]);
+</code>
+</pre>
+</section>
+<section>
+<h2>Controller</h2>
+<pre><code>controller: 'MyController' </code></pre>
+<pre><code>controller: function($scope) {} </code></pre>
+<h2>template</h2>
+<pre><code> template: '<div><h2>Route</h2></div>' </code></pre>
+<h2>templateUrl</h2>
+<pre><code> templateUrl: 'views/template_name.html' </code></pre>
+</section>
+<section>
+		<iframe width="640" height="480" src="//www.youtube.com/embed/10BhkHi6DC4" frameborder="0" allowfullscreen></iframe>
+</section>
+<section>
+		<h4>Demo</h4>
+		<iframe width="853" height="680" src="//angular.github.io/angular-phonecat/step-7/app/#/phones" frameborder="0" allowfullscreen>
+		</iframe>
+</section>

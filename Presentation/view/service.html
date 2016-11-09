@@ -1,0 +1,25 @@
+<section>
+<h2>Service</h2>
+<h4>Services provide a method for us to keep data around for the lifetime of the app and communicate
+across controllers in a consistent manner.</h4>
+<h4>Services are singleton objects that are instantiated only once per app (by the $injector) and
+lazy-loaded (created only when necessary)</h4>
+</section>
+<section>
+	<h2>Service method</h2>
+	<pre><code>angular.module('myApp.services', [])
+.service('githubService', function() {
+this.serviceInstance = "Github Service";
+});
+</code></pre>
+</section>
+<section>
+	<h2>factory method</h2>
+	<pre><code>angular.module('myApp.services', [])
+.factory('githubService', function() {
+var serviceInstance = {};
+// Our first service
+return serviceInstance;
+});
+</code></pre>
+</section>

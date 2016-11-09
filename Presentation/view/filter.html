@@ -1,0 +1,58 @@
+<section>  
+<h2>Filters</h2>
+
+<h4>A filter provides a way to format the data we display to the user. </h4>
+<br>
+<h4>Invoke filters in our HTML with the | (pipe) character inside the template binding characters
+{{<font style="color:white">a</font> }}</h4>
+<br>
+Uppercase Filter &#123; &#123; name | uppercase }} 
+</section>
+<section>
+  <h2>Demo </h2>
+<live-example>
+  <script type="text/template" data-title="currency">
+  <form name="form">
+    <p>
+    <input type="number" ng-model="name"/>
+    </p>
+    <p>
+    {{name|currency:"&#8377;"}}
+    </p>
+  </form>
+  </script>
+  <script type="text/template" data-title="date">
+  <form name="form">
+    <p>
+    <input type="number" ng-model="dateandtime"/>
+    </p>
+    <p>
+    {{dateandtime|date:"MM/dd/yyyy @ h:mma"}}
+    </p>
+  </form>
+  </script>
+  <script type="text/template" data-title="uppercase">
+  <form name="form">
+    <p>
+    <input type="text" ng-model="string1"/>
+    </p>
+    <p>
+    {{string1|uppercase}}
+    </p>
+  </form>
+  </script>  
+   <script type="text/template" data-title="limitto">
+  <code>
+  function Ctrl($scope) {
+    $scope.numbers = [1,2,3,4,5,6,7,8,9];    
+    $scope.numLimit = 3;    
+  }
+  </code>
+  <form name="form" ng-controller="Ctrl">
+  Limit {{numbers}} to: <input type="integer" ng-model="numLimit">
+  <p>Output numbers: {{ numbers | limitTo:numLimit }}</p>
+  </form>
+  </script> 
+
+</live-example>
+</section>

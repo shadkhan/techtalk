@@ -1,0 +1,54 @@
+<section class="" data-id="7159f23c1e000268e3a8cf9b9f1d6709">
+        <h2>UI-Router</h2>
+<div>
+        <ul>
+<li>
+<span style="text-align: center;">The UI-Router is a routing framework for AngularJS&nbsp;</span>
+        <br>
+</li>
+<li>
+        <span style="text-align: center;">It provides a different approach than ngRoute in that it changes application views based on state of the application and not just the route URL.</span>
+    </li>
+<li>
+    <span style="text-align: center;">With this views and routes aren’t tied down to the site URL.</span>
+</li>
+<li>
+<span style="text-align: center;">
+<pre><code> We use 
+&lt;div ui-view&gt;&lt;/div&gt; instead of ngRoute’s &lt;div ng-view&gt;&lt;/div&gt;.
+</code></pre>
+</span>
+</li>
+</ul>
+</div>
+</section>
+<section class="" data-id="b44b73dba9a75d436d60d0ab88092d1f">
+    <h2>EXAMPLE</h2>
+<div style="text-align: left; ">
+<pre><code>//HTML
+ &lt;div class="container"&gt;
+  &lt;!-- THIS IS WHERE WE WILL INJECT OUR CONTENT --&gt;
+    &lt;div ui-view&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div style="text-align: left;">
+<pre><code>//js
+var routerApp = angular.module('routerApp', ['ui.router']);
+routerApp.config(function($stateProvider, $urlRouterProvider) {    
+    $urlRouterProvider.otherwise('/home');    
+    $stateProvider        
+        // HOME STATES AND NESTED VIEWS 
+        .state('home', {
+            url: '/home',
+            templateUrl: 'partial-home.html'
+        })        
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS 
+        .state('about', {
+            // we'll get to this in a bit       
+        });        
+});
+</code></pre>
+</div>
+<br>
+</section>

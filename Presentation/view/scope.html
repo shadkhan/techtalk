@@ -1,0 +1,38 @@
+ <h2>
+        <span id="docs-internal-guid-7f4d6fde-9415-7ed3-f9f2-dd9259b802ae">
+            <p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt;">$scope</p>
+        </span>
+        </h2>
+<div>
+<ul>
+<li style="text-align: left;">
+<span style="text-align: center;">Provides context for expression evaluation</span>
+        <br>
+</li>
+<li style="text-align: left;">
+        <span style="text-align: center;">Behave same as &nbsp;DOM`s &nbsp;hierarchy&nbsp;structure<br>
+        </span>
+    </li>
+<li style="text-align: left;">
+<span style="text-align: center;">Fallows&nbsp;prototypical&nbsp;</span>inheritance</li>
+</ul>
+<div style="text-align: left;">
+    <br>
+</div>
+<ul>
+<li>request $scope in controllers</li>
+</ul>
+<div style="text-align: left;">
+<pre><code>  myApp.controller('GreetCtrl', function ($scope) {
+    $scope.greeter = { greeting: 'Misko'};
+});</code></pre>
+</div>
+<ul>
+<li style="text-align: left;">
+    <span style="text-align: justify;">Use in view/template</span>
+</li>
+</ul>
+<div style="text-align: justify;">
+<pre><code>  &lt;p ng-controller='GreetCtrl'&gt;{{greeter.greeting}}&lt;/p&gt;</code></pre>
+</div>
+</div>
